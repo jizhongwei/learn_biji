@@ -1,0 +1,138 @@
+### 1、浮动（float）
+1、浮动的框可以向左或向右移动，直到它的外边缘碰到包含框的边框为止。
+***由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样***
+***一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止***
+2、浮动元素之后的元素将围绕它；浮动元素之前的元素将不会受到影响。
+***如果图像是右浮动，下面的文本流将环绕在它左边***
+```
+img {
+    float: right;
+}
+```
+3、彼此相邻的浮动元素
+> 如果把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻，直到换行；
+***
+### 2、HTML\<meta>元素
+1、\<meta>标签描述了一些基本的元数据。元数据不会显示在浏览器上，但会被浏览器解析。
+2、\<meta>元素可被用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。元数据可以使用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其它web服务。
+```
+1、定义搜索引擎的关键词
+<meta name="keywords" content="HTML, CSS">
+2、定义网页描述内容
+<meta name="description" content="免费 web & 编程 教程">
+3、定义网页作者
+<meta name="author" content="dick">
+4、每15秒刷新当前网页
+<meta http-equiv="refresh" content="15">
+```
+***
+### 3、阴影box-shadow
+1、box-shadow属性可以向盒子添加阴影。
+```
+属性设置方式：
+box-shadow:x-offset y-offset 阴影模糊半径 阴影扩展半径 阴影颜色 投影方式；
+1、x-offset：必需。水平阴影的位置，允许负值
+2、y-offset：必需。垂直阴影的位置，允许负值
+3、阴影模糊半径：可选。模糊距离
+4、阴影扩展半径：可选。阴影的尺寸
+5、阴影颜色：可选。阴影的颜色。省略默认为黑色
+6、投影方式：可选。（设置inset时为内部阴影方式，如果省略为外阴影方式）
+
+实例代码:
+(外阴影)
+.box-shadow {
+    box-shadow: 4px 2px 6px #eee;
+}
+（内阴影）
+.box-shadow {
+    box-shadow:4px 2px 6px #eee inset;
+}
+```
+2、阴影模糊半径与阴影扩展半径的区别
+> 1、阴影模糊半径：此参数可选，其值只能是正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；
+2、阴影扩展半径：此参数可选，其值可以是负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；
+***
+### 4、渐变颜色
+1、gradient分为线性渐变（linear）和径向渐变（radial）。
+```
+linear-gradient(to botton(180deg),#fff,#eee)
+```
+***
+### 5、文字与字体
+1、text-overflow与word-wrap
+text-overflow用来设置是否使用一个省略标记（...）标示对象内文本的溢出。
+```
+text-overflow:clip | ellipsis
+```
+> 但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow：hidden），只有这样才能实现溢出文本显示省略号的效果
+```
+{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+```
+2、嵌入字体@font-face
+@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。
+```
+语法:
+@font-face {
+    font-family:字体名称；
+    src：字体文件在服务器上的相对路径或绝对路径；
+}
+```
+***
+### 6、盒子模型
+1、CSS中有一种基础设计模式叫盒模型，盒模型定义了web页面中的元素中如何来解析。CSS中每一个元素都是一个盒模型，包括html和body标签元素。在盒模型中主要包括width、height、border、background、padding和margin这些属性，而且他们之间的层次关系可以相互影响
+***
+### 7、jQuery
+1、**$(document).ready**的作用是等页面的文档（document）中的节点都加载完毕后，在执行后续的代码，因为我们在执行代码的时候，可能会依赖页面的某一个元素，我们要确保这个元素真正的被加载完毕后才能正确的使用
+2、jQuery对象与DOM对象
+> jQuery对象与DOM对象是不一样的
+
+可能一时半会分不清楚哪些是jQuery对象，哪些是DOM对象
+下面利用代码区别：
+```
+JavaScript：
+var p = document.getElmentById("imooc");
+p.innerHTML = 'xxxxxx';
+p.style.color = 'red';
+jQuery：
+var $p = $('$imooc');
+$p.html("xxxxx").css('color', 'red');
+```
+3、jQuery库本质上还是JavaScript代码，它只是对JavaScript语言进行包装处理，为的是提供更好更方便快捷的DOM处理与开发中经常使用的功能。我们使用jQuery的同时也能混合JavaScript原生代码一起使用。在很多场景中，我们需要jQuery与DOM能够相互的转换，它们都是可以操作的DOM元素，jQuery是一个类数组对象，而DOM对象就是一个单独的DOM元素。
+4、this是JavaScript中的关键字，指的是当前的上下文对象，简单的说就是方法/属性的所有者。
+```
+var imooc = {
+    name: "xxxx",
+    getName: function (){
+        return this.name;
+    }
+}
+imooc.getName();
+```
+5、同样，在DOM中this就是指向了这个html元素对象，因为this就是DOM元素本身的一个引用
+```
+JavaScript：
+p.addEventListener('click', function(){
+    this.style.color = 'red';
+    p.style.color = 'red';
+}, false);
+通过addEventListener绑定时间回调中，
+jQuery：
+$('p').click(function(){
+    var $this = $(this);
+    $this.css("color", "red");
+})
+通过$()方法传入当前的元素对象的引用this，把这个this加工成jQuery对象，我们就可以用jQuery提供的快捷方法直接处理样式了
+```
+**总体：**
+> this，表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。
+$(this)，代表的上下文对象是一个jQuery的上下文对象，可以调用jQuery的方法和属性值。
+
+6、操作特性的DOM方法主要有3个
+>JavaScript： 
+getAttribute、setAttribute、removeAttribute
+jQuery：
+attr()、removeAttr()
