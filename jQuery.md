@@ -53,3 +53,17 @@
 </head>
 ```
 ***安装完jQuery后，我们可以在浏览器的调试界面的console下，输入$.fn.jquery来查看jQuery的版本，不过一般我们引入jQuery的时候都知道版本号的***
+***
+### 5、jQuery语法
+1、通过jQuery，您可以选取（查询，query）HTML元素，并对它们执行“操作”（actions）
+> jQuery语法通过选取HTML元素，并对选取的元素执行某些操作
+基础语法：
+\$(selectot).action()
+1、美元符号定义jQuery
+2、选择符（selector）“查询”和“查找”HTML元素
+3、action()执行对元素的操作
+例子：
+\$(this).hide()隐藏当前元素
+\$("p").hide()隐藏所以p元素
+\$("p.test").hide()隐藏所有clas=“test”的p元素
+\$("#test").hide()隐藏所有id=“test”的元素
