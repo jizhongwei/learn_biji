@@ -60,7 +60,7 @@
 .container .main {
   width: 80%;
   background: #a39595;
-  margin: 100px auto 80px auto;
+  margin: 80px auto 80px auto;
   box-shadow: 10px 10px 15px black;
   border-radius: 10px;
 }
@@ -85,6 +85,9 @@
 .container .main article p {
   margin-top: 10px;
   text-indent: 2em;
+}
+.container .main article p a {
+  text-decoration: none;
 }
 .footer {
   position: fixed;
