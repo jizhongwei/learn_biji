@@ -8,30 +8,59 @@
   /* text-align: center; */
   box-shadow: 3px 3px 8px black;
   margin-top: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
 }
-.header div {
+.header div.nav {
   width: 80%;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0px;
 }
-.header div ul {
+.header div.nav div.ul-info {
+  float: left;
+}
+.header div.nav div.ul-info ul {
   list-style: none;
   padding: 10px 0 10px 0;
+  display: inline-block;
 }
-.header div ul li {
+.header div.nav div.ul-info ul li {
   display: inline-block;
   padding-right: 20px;
 }
-.header div ul li a.brand {
+.header div.nav div.ul-info ul li a.brand {
   font-size: 30px;
 }
-.header div ul li a {
+.header div.nav div.ul-info ul li a {
   text-decoration: none;
   font-size: 20px;
+}
+.header div.nav div.ul-info ul li a:hover {
+  font-style: italic;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px black;
+}
+.header div.nav div.ul-info ul li:first-child {
+  padding-right: 50px;
+}
+.header div.nav div.btn {
+  float: right;
+  right: 20px;
+  padding: 10px 20px;
+}
+.header div.nav div.btn button {
+  font-size: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 2px 3px 3px gray;
 }
 .container .main {
   width: 80%;
   background: #a39595;
-  margin: 20px auto 80px auto;
+  margin: 100px auto 80px auto;
   box-shadow: 10px 10px 15px black;
   border-radius: 10px;
 }
