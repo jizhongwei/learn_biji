@@ -1,0 +1,51 @@
+* {
+  /* background:#f3f3f3; */
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  background: #f3f3f3;
+  /* text-align: center; */
+  box-shadow: 3px 3px 8px black;
+  margin-top: 0px;
+}
+.header div {
+  width: 80%;
+  margin: 0 auto;
+}
+.header div ul {
+  list-style: none;
+  padding: 10px 0 10px 0;
+}
+.header div ul li {
+  display: inline-block;
+  padding-right: 20px;
+}
+.header div ul li a.brand {
+  font-size: 30px;
+}
+.header div ul li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.container .main {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.container .main .menu {
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+  background: red;
+}
+.container .main .content {
+  width: 60%;
+  float: left;
+  background: yellow;
+}
+.container .main .aside {
+  width: 20%;
+  float: right;
+  background: blue;
+}
