@@ -157,3 +157,91 @@ $("button").click(function(){
 ### 9、停止动画
 1、jQuery.stop()方法用于在动画或效果完成前对它们进行停止
 > 默认地，stop()会清除在被选元素上指定的当前动画
+***
+### 10、callback方法
+1、callback函数在当前动画100%完成之后执行
+***
+### 11、添加元素
+1、通过jQuery，可以很容易地添加新的元素、内容
+> append()在被选元素的结尾插入内容
+preappend()在被选元素的开头插入内容
+after()在被选元素之后插入内容
+before()在被选元素之前插入内容
+***
+### 12、删除元素
+1、通过jQuery，可以很容易地删除已有的HTML元素
+> 1、remove()删除被选中元素（及其子元素）
+2、empty()从被选元素中删除子元素
+
+2、过滤被删除的元素
+> jQuery remove() 方法也可接受一个参数，允许您对被删元素进行过滤。
+比如：
+$("p").remove(".italic")删除class="italic"的所有p元素
+***
+### 13、获取并设置CSS类
+1、通过jQuery，可以很容易地对css元素进行操作。
+> addClass()向被选元素添加一个或多个类
+removeClase() 从被选元素删除一个或者多个类
+toggleClass()对被选元素进行添加/删除类的切换操作
+css()设置或返回样式属性
+
+2、css()方法设置或返回被选元素的一个或多个样式属性
+> 1、返回css属性
+\$("p").css("background-color");
+2、设置css属性
+\$("p").css("background-color", 'yellow');
+3、设置多个css属性
+$("p").css({"background-color":"yellow","font-size":"200%"});
+***
+### 14、获取元素尺寸
+1、通过jQuery，很容易处理元素和浏览器窗口的尺寸
+***方法***
+> 1、width()方法设置或返回元素的宽度（不包括内边距、边框或外边距）
+2、height()方法设置或返回元素的高度（不包括内边距、边框或外边距）
+3、innerWidth()方法返回元素的宽度（包括内边距）
+4、innerHeight()方法返回元素的高度（包括内边距）
+5、outerWidth()方法返回元素的宽度（包括内边距和边框）
+6、outerHeight()方法返回元素的高度（包括内边距和边框）
+***
+### 15、jQuery遍历元素
+1、祖先
+> 祖先是父、祖父或曾祖父等等
+通过jQuery，您能够向上遍历DOM树，以查找元素的祖先
+
+1.1、向上遍历DOM树
+> 1、parent()返回被选元素的直接父元素
+2、parents()返回被选元素的所有祖先元素，它一路向上直到文档的根元素（<html></html>）。
+3、parentUntil()返回介于两个给定元素之间的所有祖先元素（不包括最后的祖先元素）
+
+```
+$(document).ready(function(){
+    $("span").parents("ul");
+});
+返回被选元素的祖先元素，并且该祖先元素为ul
+$(document).ready(function(){
+    $("span").parentsUntil("div");
+});
+```
+2、后代
+2.1、children()返回被选元素的所有直接子元素
+该方法只会向下一级对DOM树进行遍历
+```
+返回每个div元素的所有直接子元素
+$(document).ready(function(){
+    $("div").children();
+});
+返回类名为 "1" 的所有 <p> 元素，并且它们是 <div> 的直接子元素
+$(document).ready(function(){
+  $("div").children("p.1");
+});
+```
+2.2、find()方法返回被选元素的后代元素，一路向下直到最后一个后代
+```
+返回属于 <div> 后代的所有 <span> 元素
+$(document).ready(function(){
+  $("div").find("span");
+});
+返回 <div> 的所有后代
+$(document).ready(function(){
+  $("div").find("*");
+});
