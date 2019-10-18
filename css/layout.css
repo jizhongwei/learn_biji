@@ -29,23 +29,42 @@
   font-size: 20px;
 }
 .container .main {
+  width: 80%;
+  background: #a39595;
+  margin: 20px auto 80px auto;
+  box-shadow: 10px 10px 15px black;
+  border-radius: 10px;
+}
+.container .main article {
+  padding: 20px;
+  border-bottom: solid 2px black;
+}
+.container .main article h2 a {
+  text-decoration: none;
+  color: black;
+}
+.container .main article div.article-info {
+  padding-top: 10px;
+}
+.container .main article div.article-info span {
+  font-style: italic;
+  padding-right: 10px;
+}
+.container .main article div.article-info span a {
+  text-decoration: none;
+}
+.container .main article p {
+  margin-top: 10px;
+  text-indent: 2em;
+}
+.footer {
+  position: fixed;
+  bottom: 0px;
   width: 100%;
-  overflow: hidden;
-  margin-top: 20px;
+  height: 50px;
+  background: gray;
+  text-align: center;
 }
-.container .main .menu {
-  width: 20%;
-  float: left;
-  margin-right: 10px;
-  background: red;
-}
-.container .main .content {
-  width: 60%;
-  float: left;
-  background: yellow;
-}
-.container .main .aside {
-  width: 20%;
-  float: right;
-  background: blue;
+.footer p {
+  padding: 15px;
 }
