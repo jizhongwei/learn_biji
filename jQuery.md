@@ -67,3 +67,93 @@
 \$("p").hide()隐藏所以p元素
 \$("p.test").hide()隐藏所有clas=“test”的p元素
 \$("#test").hide()隐藏所有id=“test”的元素
+***
+### 6、jQuery选择器
+1、jQuery选择器允许我们对HTML元素组或单个元素进行操作
+> jQuery选择器基于元素的id、类、类型、属性、属性值等“查找”（或选择）HTML元素。它基于已经存在的css选择器，除此之外，它还有一些自定义的选择器。
+jQuery中所有选择器都以美元符号开头：$()
+
+2、元素选择器
+> jQuery元素选择器基于元素名选取元素
+比如在选中页面中所有的p标签元素
+$("p")
+```
+用户点击按钮后，所有的p元素都隐藏
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+```
+```
+更多实例
+$("*") 选取全部元素
+$(this) 选取当前HTML元素
+$("p.intro") 选取class为intro的p元素
+$("p:first") 选取第一个p元素
+$("ul li:first") 选取第一个ul元素的第一个li元素
+$("ul li:first-chlid")选取每个ul元素的第一个li元素
+$("[href]") 选取带有href属性的元素
+$("a[target='_blank']") 选取所有target属性值等于"_blank"的a元素
+$("a[target!='_blank']") 选取所有target属性值不等于"_blank"的a元素
+$(":button") 选取所有type="button"的input元素和button元素
+$("tr:even") 选取偶数位置的tr元素
+$("tr:odd") 选取奇数位置的tr元素
+```
+***
+### 7、jQuery事件
+***什么是事件？***
+页面对不同访问者的响应叫做事件
+事件处理程序指的是当HTML中发生某些事件时所调用的方法。
+1、在元素上移动鼠标
+2、选取单选按钮
+3、点击元素
+|鼠标事件|键盘事件|表单事件|文档/窗口事件|
+|:-:|:-:|:-:|:-:|
+|click|keypress|submit|load|
+|dbclick|keydown|change|resize|
+|mouseenter|keyup|focus|scroll|
+|mouseleave||blur|unload|
+|hover||||
+***
+### 8、jQuery效果
+1、隐藏和显示
+1.1、jQuery.hide()隐藏
+1.2、jQuery.show()显示
+1.3、jQuery.toggle()隐藏和显示来回切换
+> 上面三个方法接收三个参数，
+如：
+jQuery.hide(元素，速度参数，回调函数)
+1、元素是要控制的HTML元素
+2、速度是动作的时间效果
+3、回调函数是效果完成后执行的动作
+
+2、淡入淡出
+1.1、jQuery.fadeIn()
+1.2、jQuery.fadeOut()
+1.3、jQuery.fadeToggle()
+1.4、jQuery.fadeTo()
+
+3、滑动
+1.1、jQuery.slideDown()
+1.2、jQuery.fadeUp()
+1.3、jQuery.fadeToggle()
+
+4、动画
+jQuery.animate()
+> jQuery.animate({params}, speed, callback)
+1、params参数定义形成动画的css属性
+2、speed参数规定效果的时长，它可以取以下值：“slow”、“fast“或者毫秒
+3、callback参数动画完成后所执行的函数名称
+
+```
+$("button").click(function(){
+    $("div").animate({left:'250px'});
+});
+```
+***可以用 animate() 方法来操作所有 CSS 属性吗？***
+是的，几乎可以！不过，需要记住一件重要的事情：当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。
+***
+### 9、停止动画
+1、jQuery.stop()方法用于在动画或效果完成前对它们进行停止
+> 默认地，stop()会清除在被选元素上指定的当前动画
