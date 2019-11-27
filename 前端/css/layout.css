@@ -66,7 +66,6 @@
 }
 .container .main article {
   padding: 20px;
-  border-bottom: solid 2px black;
 }
 .container .main article h2 a {
   text-decoration: none;
@@ -88,6 +87,9 @@
 }
 .container .main article p a {
   text-decoration: none;
+}
+article:not(:last-child) {
+  border-bottom: solid 2px black;
 }
 .footer {
   position: fixed;
